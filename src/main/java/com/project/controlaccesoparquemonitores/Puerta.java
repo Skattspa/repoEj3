@@ -8,7 +8,9 @@ public class Puerta {
         this.id = id;
     }
 
+    // Método que simula el acceso a través de la puerta
     public synchronized boolean acceder(Visitante visitante) {
+        // Comprobar si la puerta está ocupada
         while (ocupada) {
             try {
                 wait(); // Esperar si la puerta está ocupada
@@ -16,10 +18,10 @@ public class Puerta {
                 Thread.currentThread().interrupt();
             }
         }
-        ocupada = true; // Marcar la puerta como ocupada
+        ocupada = true; // Marcar la puerta como ocupada con un flag booleano.
         System.out.println("Visitante " + visitante.getId() + " accediendo a través de la puerta " + id);
 
-        // Simular tiempo de acceso
+        //Comprobación con try catch de tiempo de acceso
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

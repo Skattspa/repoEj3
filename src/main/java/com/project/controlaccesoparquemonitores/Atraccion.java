@@ -28,6 +28,6 @@ public class Atraccion {
 
         System.out.println("Visitante " + visitante.getId() + " ha salido de la atracción " + nombre);
         ocupada = false; // Liberar la atracción
-        notify(); // Notificar a otros hilos que la atracción está libre
+        notify(); // Notificar a otros hilos de que la atracción está libre
     }
 }
